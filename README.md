@@ -7,6 +7,9 @@ naughtyusers
 
 [Custom cPanel Laravel 4.x Integration comes from me](https://github.com/patrick-hudson/cpanel-laravel-api) [originally forked from adelynx] (https://github.com/adelynx/cpanel)
 
+#Table of Contents
+[Features](#features)
+
 ## Features
 
 * Bootstrap 3.x
