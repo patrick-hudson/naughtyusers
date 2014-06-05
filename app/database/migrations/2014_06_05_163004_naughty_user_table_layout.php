@@ -25,7 +25,7 @@ class NaughtyUserTableLayout extends Migration {
             $table->float('diskspace');
             $table->string('owner');
             $table->float('owner_diskspace');
-            $table->float('owner_allowed');
+            $table->float('owner_diskallowed');
             $table->date('reportran_at');
             $table->date('created_at');
         });
@@ -43,7 +43,7 @@ class NaughtyUserTableLayout extends Migration {
             $table->engine = 'InnoDB';
             $table->string('server');
             $table->string('badusers');
-            $table->timestamps();
+            $table->string('timestamp');
         });
         Schema::create('servers', function($table) {
             $table->engine = 'InnoDB';
