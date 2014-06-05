@@ -50,13 +50,26 @@ Well that's a good question.
 ### Step 4
 	Setup your MySQL database, edit the details of said database in app/config/database.php
 ##You must use MySQL
+
+		'mysql' => array(
+			'driver'    => 'mysql',
+			'host'      => 'localhost',
+			'database'  => 'badusers',
+			'username'  => 'badusers',
+			'password'  => 'randompassword',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
+		
 ### Step 5: Prep your new database for production.
 	cd into your naughtyusers folder and run the following
 	php artisan migrate
 	php artisan db:seed
 	php artisan addservers
 ### Step 6: Set your root password. 
-	Create a new file in controllers called PasswordController.php
+> Create a new file in controllers called PasswordController.php
+	
 	Your file should look something like this
 	<?php
 		class PasswordController extends Controller {
