@@ -8,7 +8,12 @@ naughtyusers
 [Custom cPanel Laravel 4.x Integration comes from me](https://github.com/patrick-hudson/cpanel-laravel-api) [originally forked from adelynx] (https://github.com/adelynx/cpanel)
 
 #Table of Contents
-[Features](#features)
+* [Features](#features)
+* [How the hell do I use it?](#how-the-hell-do-i-use-this-thing)
+	*[Requirements](#requirements)
+* [PHP Artisan Commands](#php-artisan-commands-to-get-stuff-done)
+* [Web Interface](#web-interface)
+* [Legal](#legal-mish-mash)
 
 ## Features
 
