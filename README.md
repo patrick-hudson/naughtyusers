@@ -89,7 +89,7 @@ Well that's a good question.
 			}
 		}
 	
-### That's it, you're ready to start rocking and rolling.
+### That's it, you're ready to start rocking and rolling. All the files you need are in the Public folder. I recommend setting up a subdomain like naughtyusers.domain.com and point the document root to public.
 
 ### PHP Artisan commands to get stuff done.
 > Shared server naughty user report. Stores server, username, diskspace used in GB, account owner, owners allowed disk space, and report ran at date.
@@ -120,6 +120,8 @@ Well that's a good question.
 	php artisan reseller ssd
 	php artisan reseller iceland
 	php artisan reseller statistics
+	
+> All the artisan commands should be able to be run from cron. This has not been tested. Should work though.
 
 ### Useful functions inside of controllers/CpanelController.php
 	ServerList() - Specify start and finish servers.
