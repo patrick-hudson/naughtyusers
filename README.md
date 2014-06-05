@@ -30,15 +30,16 @@ naughtyusers
 
 
 
-How the hell do I use this thing?
+##How the hell do I use this thing?
 
 Well that's a good question.
+
 ##Requirements
 	PHP >= 5.4.0
 	MCrypt PHP Extension
 	MySQL is REQUIRED for 
 	PHP Timeout must be quite lone. I have mine set to 12 hours.
-	Must be able to connect outbound to port 2097
+	Must be able to connect outbound to port 2087
 ### Step 1: Get the code
 	git clone https://github.com/patrick-hudson/naughtyusers.git
 ### Step 2: Use Composer to install dependencies
@@ -68,9 +69,10 @@ Well that's a good question.
 	php artisan db:seed
 	php artisan addservers
 ### Step 6: Set your root password. 
-> Create a new file in controllers called PasswordController.php
+> Create a new file in app/controllers called PasswordController.php
+
+> Your file should look something like this
 	
-	Your file should look something like this
 	<?php
 		class PasswordController extends Controller {
 
@@ -82,7 +84,7 @@ Well that's a good question.
 ### That's it, you're ready to start rocking and rolling.
 
 ### PHP Artisan commands to get stuff done.
-> Shared server naughty user report
+> Shared server naughty user report. Stores server, username, diskspace used in GB, account owner, owners allowed disk space, and report ran at date.
 
 > normal = a2s
 
@@ -104,6 +106,8 @@ Well that's a good question.
 
 > iceland = thsr
 
+> statistics = get every reseller account, return the total accounts, and the total size of the reseller account
+
 	php artisan reseller normal
 	php artisan reseller ssd
 	php artisan reseller iceland
@@ -114,8 +118,32 @@ Well that's a good question.
 	DoLogin() - Process login as root via cPanel XML API
 	SetServer() - Start server, end server, type is set via an artisan command (hint: look in commands/reseller or shared.)
 	getListAccounts() - Gets a list of all accounts on a group of servers as specified via a php artisan command
+	GetResellerStatistics() - Gets the reseller stats
+	AddServers() - Add server based on the array defined at the top of the page.
+
+##Web Interface
+
+	Default login
+	Username: support
+	Password: support
+		
+> Note: You must actually run a server report before you can use anything in the web interface.
+
+#### Dashboard
+	Pretty self explanitory. You can search by username, diskspace, by server, by report date, after certain date, reseller stats, and multi search. (Hint: Multisearch needs some work)
+	
+#### Functions 
+	Shows in real time the servers response time and the total bad users on that server. (jQuery can be a bit wonky)
+	
+	You can also clear the list at any time should it become too large to handle.
+	
+#### Admin Panel
+	Not a whole lot in here, you can add/remove users if you wish.
 
 > Alright, we get it. This is freaking awesome, is this for me?
-	Most likely not, this was designed for A2Hosting Inc. With a little work and a couple beers, there's no reason why it wouldn't work. "It's just a bunch of cPanel API Calls"
+	Most likely not, this was designed for A2Hosting Inc. With a little work and a couple beers, there's no reason why it wouldn't work. "It's just a bunch of cPanel API Calls". Refer to the legal mish-mash below for more information.
 
-
+### Legal Mish-Mash
+> Everything published in this repository is open source. Before using this software, you must agree to the license of each component. This includes but is not limited to cPanel, Laravel, Twitter Bootstrap. The usage of this repository as a whole is licensed under GPLv3. Further inquiries about such license or the product itself should be directed towards me phudson2@gmail.com. Inquiries about software used in the development of this product should be directed at the appropriate companies. Naughty Users is developed by Patrick Hudson, while working for A2Hosting Inc, but not FOR A2Hosting. Naughty users is freely available to be used/modified and distributed as long as it meets GPLv3.
+	
+	A GPLv3 License is provided within this repository. All copyrights from the above mentioned companies are included in the affected files.
