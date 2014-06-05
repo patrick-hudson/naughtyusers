@@ -28,13 +28,13 @@ class PermissionsTableSeeder extends Seeder {
         $permissions = array(
             array(
                 'role_id'       => $role_id_admin,
-                'permission_id' => $permission_base + 4
+                'permission_id' => $permission_base + 1
             ),
             array(
                 'role_id'       => $role_id_admin,
-                'permission_id' => $permission_base + 5
+                'permission_id' => $permission_base + 2
             ),
-        );
+       );
 
         DB::table('permission_role')->insert( $permissions );
     }
