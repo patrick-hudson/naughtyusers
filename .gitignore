@@ -1,1 +1,3 @@
 /app/controllers/PasswordController.php
+/app/storage/badpeeps.txt
+/app/storage/servers.txt
