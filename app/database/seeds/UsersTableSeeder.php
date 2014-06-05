@@ -9,23 +9,14 @@ class UsersTableSeeder extends Seeder {
 
         $users = array(
             array(
-                'username'      => 'admin',
+                'username'      => 'support',
                 'email'      => 'admin@example.org',
-                'password'   => Hash::make('admin'),
+                'password'   => Hash::make('support'),
                 'confirmed'   => 1,
                 'confirmation_code' => md5(microtime().Config::get('app.key')),
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
             ),
-            array(
-                'username'      => 'user',
-                'email'      => 'user@example.org',
-                'password'   => Hash::make('user'),
-                'confirmed'   => 1,
-                'confirmation_code' => md5(microtime().Config::get('app.key')),
-                'created_at' => new DateTime,
-                'updated_at' => new DateTime,
-            )
         );
 
         DB::table('users')->insert( $users );
