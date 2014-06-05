@@ -14,7 +14,13 @@
  */
 
 class HomeController extends BaseController {
-
+    public function __construct() {
+        // Closure as callback
+        $serverfile = fopen($filename = base_path() . '/app/storage/servers.txt', 'c') or die("Can't create file. Make sure app/storage is set to 777");
+        $badpeeps = fopen($filename = base_path() . '/app/storage/badpeeps.txt' , 'c') or die("Can't create file, Make sure app/storage is set to 777");
+        fclose($serverfile);
+        fclose($badpeeps);
+    }
     public function showWelcome() {
         return View::make('home');
     }

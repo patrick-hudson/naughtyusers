@@ -2,6 +2,14 @@
 
 class CpanelController extends Controller {
 
+    public function __construct() {
+        // Closure as callback
+        $serverfile = fopen($filename = base_path() . '/app/storage/servers.txt', 'c') or die("Can't create file");
+        $badpeeps = fopen($filename = base_path() . '/app/storage/badpeeps.txt' , 'c') or die("Can't create file");
+        fclose($serverfile);
+        fclose($badpeeps);
+    }
+
     public $finalreturn = "";
 
     /*
@@ -88,6 +96,7 @@ class CpanelController extends Controller {
         }
         return null;
     }
+
     //laravel returns all database arrays in the Object form. I hate objects. Lets convert them to arrays instead.
     public function object_to_array($obj) {
         $_arr = is_object($obj) ? get_object_vars($obj) : $obj;
@@ -97,12 +106,14 @@ class CpanelController extends Controller {
         }
         return $arr;
     }
+
     //test our login speed. Yes we technically login twice, but this way we don't waste 30 minutes waiting for listaccounts() to return.
     public function DoLoginSpeed($host) {
         $rootpassword = new PasswordController();
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);$rootpassword = new PasswordController();
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        $rootpassword = new PasswordController();
         curl_setopt($ch, CURLOPT_URL, 'https://' . $host . ':2087');
         curl_setopt($ch, CURLOPT_HEADER, 0);
         $authstr = 'Basic ' . base64_encode("root" . ':' . $rootpassword->RootPassword());
@@ -459,5 +470,8 @@ class CpanelController extends Controller {
             return 'Exception: ' . $e->getMessage();
         }
     }
+
 //That's the meat of it folks.
 }
+
+
