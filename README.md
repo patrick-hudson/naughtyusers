@@ -10,7 +10,7 @@ naughtyusers
 #Table of Contents
 * [Features](#features)
 * [How the hell do I use it?](#how-the-hell-do-i-use-this-thing)
-	*[Requirements](#requirements)
+	* [Requirements](#requirements)
 * [PHP Artisan Commands](#php-artisan-commands-to-get-stuff-done)
 * [Web Interface](#web-interface)
 * [Legal](#legal-mish-mash)
